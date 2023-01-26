@@ -1,15 +1,16 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { getPokeData } from "services/pokeAPI";
+import * as API from "services/pokeAPI";
+import {PokeGallery} from "./pokeGallery"
 import { toast } from "react-toastify";
 
-export const Pokemons = () => {
+export default function Pokemons() {
     const [pokemon,setPokemon] = useState([])
     
     useEffect(() => {
         const getPoke = async () => {
         try {
-            const { cast } = await getPokeData() 
+            const { cast } = await API.getPokeData();
             setPokemon(cast)
             }
         catch (error) {
@@ -21,20 +22,6 @@ export const Pokemons = () => {
     })
 
     return (
-        
-        <ul>
-            {pokemon?.map(({ name, url }) => (
-            <li>
-            <h2>
-                Product - {name}
-            </h2>
-            <p>
-                url - {url}
-            </p>
-            </li>
-            ))}
-            
-            </ul>     
+        <PokeGallery pokemon={pokemon} />    
     )
 }
-export default Pokemons
