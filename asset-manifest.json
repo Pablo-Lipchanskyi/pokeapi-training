@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/pokeapi-training/static/css/main.7acaea2f.css",
-    "main.js": "/pokeapi-training/static/js/main.9098adae.js",
+    "main.js": "/pokeapi-training/static/js/main.0d5b5f77.js",
     "index.html": "/pokeapi-training/index.html",
     "main.7acaea2f.css.map": "/pokeapi-training/static/css/main.7acaea2f.css.map",
-    "main.9098adae.js.map": "/pokeapi-training/static/js/main.9098adae.js.map"
+    "main.0d5b5f77.js.map": "/pokeapi-training/static/js/main.0d5b5f77.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.9098adae.js"
+    "static/js/main.0d5b5f77.js"
   ]
 }
