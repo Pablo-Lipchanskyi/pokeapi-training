@@ -1,8 +1,8 @@
 import React from 'react';
-export const PokeGalleryItem = (props) => {
+export const PokeGalleryItem = (pokemon) => {
   return (
     <>
-        {props.map((poke) => (
+        {pokemon.map((poke) => (
             <li>
             <h2>
                 Product - {poke.name}

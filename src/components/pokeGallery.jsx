@@ -1,10 +1,10 @@
 import {PokeGalleryItem} from "./pokeGalleryItem"
 import React from 'react';
 
-const PokeGallery = ({ ...props }) => {
+const PokeGallery = ({ ...pokemon }) => {
   return (
     <ul>
-      <PokeGalleryItem {...props} />
+      <PokeGalleryItem {...pokemon} />
     </ul>
   );
 };
