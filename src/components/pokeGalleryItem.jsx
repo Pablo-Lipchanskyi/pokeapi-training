@@ -1,14 +1,14 @@
 import React from 'react';
-export const PokeGalleryItem = (pokemon) => {
+export const PokeGalleryItem = (...pokemon) => {
   return (
     <>
-        {pokemon.map((poke) => (
-            <li>
+        {pokemon.map(({name,url}) => (
+            <li key={name}>
             <h2>
-                Product - {poke.name}
+                Product - {name}
             </h2>
             <p>
-                url - {poke.url}
+                url - {url}
             </p>
             </li>
             ))}
