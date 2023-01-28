@@ -1,7 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import * as API from "services/pokeAPI";
-import PokeGallery from "./pokeGallery"
 import { toast } from "react-toastify";
 
 export default function Pokemons() {
@@ -10,8 +9,9 @@ export default function Pokemons() {
     useEffect(() => {
         const getPoke = async () => {
         try {
-            const { cast } = await API.getPokeData();
-            setPokemon(cast,...pokemon)
+            const  hits  = await API.getPokeData();
+            setPokemon(hits,...pokemon)
+
             }
         catch (error) {
             toast.error('Whoops')
@@ -19,9 +19,22 @@ export default function Pokemons() {
         }    
         }
         getPoke()
-    })
+    }, [])
 
     return (
-        <PokeGallery pokemon={pokemon} />    
+     <ul>
+      {pokemon.map((poke) => (
+            <li key={poke.name}>
+            <h2>
+                Product - {poke.name}
+            </h2>
+              <p>
+                  <img src={poke.url}></img>
+                  url - {poke.url}
+                  id - {poke.id}
+            </p>
+            </li>
+            ))}
+    </ul> 
     )
 }

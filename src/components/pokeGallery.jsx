@@ -1,10 +1,19 @@
-import {PokeGalleryItem} from "./pokeGalleryItem"
+
 import React from 'react';
 
-const PokeGallery = ({ ...pokemon }) => {
+const PokeGallery = (pokemon) => {
   return (
     <ul>
-      <PokeGalleryItem {...pokemon} />
+      {pokemon.map(({name,url}) => (
+            <li key={name}>
+            <h2>
+                Product - {name}
+            </h2>
+            <p>
+                url - {url}
+            </p>
+            </li>
+            ))}
     </ul>
   );
 };
